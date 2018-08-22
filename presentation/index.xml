@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations on John Newbery</title>
+    <link>https://johnnewbery.com/presentation/</link>
+    <description>Recent content in Presentations on John Newbery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://johnnewbery.com/presentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>London Bitcoin Devs - Bitcoin Core v0.17</title>
+      <link>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</link>
+      <pubDate>Thu, 16 Aug 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</guid>
+      <description>On 16 August 2018, I gave a presentation to the London Bitcon Devs meetup group covering:
+ The upcoming Bitcoin Core v0.17 release Chaincode Labs Bitcoin Optech General Q &amp;amp; A  Slides: BitcoinCore17.pdf
+Video: youtube
+Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitcoin-core-v0.17/</description>
+    </item>
+    
+  </channel>
+</rss>

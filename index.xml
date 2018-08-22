@@ -17,9 +17,21 @@
       <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://johnnewbery.com/about/</guid>
-      <description>About me I spend most of my time writing code for Bitcoin Core or thinking about Bitcoin. I work at Chaincode Labs in New York, where I have a lot of freedom to work on projects that I think are important or interesting.
+      <description> About me I spend most of my time writing code for Bitcoin Core or thinking about Bitcoin. I work at Chaincode Labs in New York, where I have a lot of freedom to work on projects that I think are important or interesting.
 Some projects I work on are:
- Bitcoin Core Bitcoin Optech Chaincode&amp;rsquo;s Bitcoin and Lightning Applications residency programs  - John Newbery</description>
+ Bitcoin Core Bitcoin Optech Chaincode&amp;rsquo;s Bitcoin and Lightning Applications residency programs  </description>
+    </item>
+    
+    <item>
+      <title>London Bitcoin Devs - Bitcoin Core v0.17</title>
+      <link>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</link>
+      <pubDate>Thu, 16 Aug 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</guid>
+      <description>On 16 August 2018, I gave a presentation to the London Bitcon Devs meetup group covering:
+ The upcoming Bitcoin Core v0.17 release Chaincode Labs Bitcoin Optech General Q &amp;amp; A  Slides: BitcoinCore17.pdf
+Video: youtube
+Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitcoin-core-v0.17/</description>
     </item>
     
     <item>
@@ -28,7 +40,8 @@ Some projects I work on are:
       <pubDate>Tue, 17 Oct 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/building-a-stronger-bitcoin-developer-community/</guid>
-      <description>In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d been slowly becoming more and more enchanted by this strange and wonderful technology, and I’d finally made the step of quitting my job of eight years with the intention of finding a way to make a living by working on Bitcoin. Matt Corallo’s announcement of the first Hacker Residency was very happy timing. I no longer had any work responsibilities and the circumstances were exactly right for me to fly to New York and dedicate four weeks to diving into the deep technical details of Bitcoin with some of the most prolific and established developers in the space.</description>
+      <description>(originally posted at https://medium.com/@jfnewbery/)
+In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d been slowly becoming more and more enchanted by this strange and wonderful technology, and I’d finally made the step of quitting my job of eight years with the intention of finding a way to make a living by working on Bitcoin. Matt Corallo’s announcement of the first Hacker Residency was very happy timing.</description>
     </item>
     
   </channel>
