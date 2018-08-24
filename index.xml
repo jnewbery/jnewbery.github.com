@@ -28,7 +28,7 @@ Some projects I work on are:
       <pubDate>Thu, 16 Aug 2018 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</guid>
-      <description>On 16 August 2018, I gave a presentation to the London Bitcon Devs meetup group covering:
+      <description>On 16 August 2018, I gave a presentation to the London Bitcoin Devs meetup group covering:
  The upcoming Bitcoin Core v0.17 release Chaincode Labs Bitcoin Optech General Q &amp;amp; A  Slides: BitcoinCore17.pdf
 Video: youtube
 Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitcoin-core-v0.17/</description>
@@ -42,6 +42,16 @@ Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitco
       <guid>https://johnnewbery.com/post/building-a-stronger-bitcoin-developer-community/</guid>
       <description>(originally posted at https://medium.com/@jfnewbery/)
 In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d been slowly becoming more and more enchanted by this strange and wonderful technology, and I’d finally made the step of quitting my job of eight years with the intention of finding a way to make a living by working on Bitcoin. Matt Corallo’s announcement of the first Hacker Residency was very happy timing.</description>
+    </item>
+    
+    <item>
+      <title>An Introduction to Bitcoin Core Fee Estimation</title>
+      <link>https://johnnewbery.com/post/an-intro-to-bitcoin-core-fee-estimation/</link>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/post/an-intro-to-bitcoin-core-fee-estimation/</guid>
+      <description>(originally posted at https://bitcointechtalk.com/)
+Why we have fees Space in the Bitcoin blockchain is a limited resource, and given a low enough price, demand for that space will far exceed the supply. If block space is free, people will find all kinds of uses for it — decentralised gambling, uploading an entire copy of the Bitcoin whitepaper, and timestamping individual documents are just a few examples we’ve seen in the past.</description>
     </item>
     
   </channel>
