@@ -65,5 +65,24 @@ In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d
 Why we have fees Space in the Bitcoin blockchain is a limited resource, and given a low enough price, demand for that space will far exceed the supply. If block space is free, people will find all kinds of uses for it — decentralised gambling, uploading an entire copy of the Bitcoin whitepaper, and timestamping individual documents are just a few examples we’ve seen in the past.</description>
     </item>
     
+    <item>
+      <title>Contributing to Bitcoin Core, a Personal Account</title>
+      <link>https://johnnewbery.com/post/contributing-to-bitcoin-core-a-personal-account/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/post/contributing-to-bitcoin-core-a-personal-account/</guid>
+      <description>In January of this year, I moved to New York to take a job contributing full time to open source Bitcoin projects. These are some of my experiences in those first few months.
+First of all, I recognize that I’m incredibly fortunate. Not only do I have tremendous freedom to work on what I think is important or interesting, I get to sit alongside and work directly with brilliantly talented and motivated people.</description>
+    </item>
+    
+    <item>
+      <title>BC2 - Tokyo</title>
+      <link>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</guid>
+      <description>I gave a talk at Digital Garage&amp;rsquo;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&amp;rsquo;t filmed, but it formed the basis for a later blog post.</description>
+    </item>
+    
   </channel>
 </rss>

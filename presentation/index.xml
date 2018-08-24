@@ -34,5 +34,14 @@ I covered the following topics:
 Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video  The mempool  slides video  HD Wallets  slides video  </description>
     </item>
     
+    <item>
+      <title>BC2 - Tokyo</title>
+      <link>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</guid>
+      <description>I gave a talk at Digital Garage&amp;rsquo;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&amp;rsquo;t filmed, but it formed the basis for a later blog post.</description>
+    </item>
+    
   </channel>
 </rss>
