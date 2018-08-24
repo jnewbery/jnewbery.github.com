@@ -35,6 +35,17 @@ Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitco
     </item>
     
     <item>
+      <title>Bitcoin Edge Dev&#43;&#43; - Stanford</title>
+      <link>https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/</guid>
+      <description> I gave a series of educational talks at the Bitcoin Edge Dev++ event at Stanford, immediately preceeding the Scaling Bitcoin Conference.
+I covered the following topics:
+Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video  The mempool  slides video  HD Wallets  slides video  </description>
+    </item>
+    
+    <item>
       <title>Building a Stronger Bitcoin Developer Community</title>
       <link>https://johnnewbery.com/post/building-a-stronger-bitcoin-developer-community/</link>
       <pubDate>Tue, 17 Oct 2017 00:00:00 -0400</pubDate>
