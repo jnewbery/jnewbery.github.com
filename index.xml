@@ -35,6 +35,16 @@ Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitco
     </item>
     
     <item>
+      <title>Bitcoin for Hackers - Recurse Center, New York</title>
+      <link>https://johnnewbery.com/presentation/2017/11/30/bitcoin-for-hackers/</link>
+      <pubDate>Thu, 30 Nov 2017 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2017/11/30/bitcoin-for-hackers/</guid>
+      <description>I gave a talk at the Recurse Center in New York titled &amp;ldquo;Bitcoin for Hackers&amp;rdquo; (so-named because the previous name for the Recurse Center was Hacker School). The talk was a very quick introduction to electronic coins, the double-spend problem, and how Bitcoin solves that problem with proof of work.
+Slides and Jupyter notebook are available here.</description>
+    </item>
+    
+    <item>
       <title>Bitcoin Edge Dev&#43;&#43; - Stanford</title>
       <link>https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 -0400</pubDate>
