@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>What Did Bitcoin Core Contributors Ever Do for Us?&middot; John Newbery</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="John Newbery">
+	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
+	<meta name="keywords" content="Bitcoin">
+	<meta name="generator" content="Hugo 0.47.1" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://johnnewbery.com/favicon.ico" type="image/x-icon">
+
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+	<header class="site-header">
+	<div class="branding">
+		<a href="https://johnnewbery.com/">
+		<img class="avatar" src="https://johnnewbery.com/img/avatar.jpg" alt=""/>
+		</a>
+		<h1 class="site-title">
+			<a href="https://johnnewbery.com/">John Newbery</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			<li><a href="/about/"> About </a></li><li><a href="/post/"> Posts </a></li><li><a href="/presentation/"> Presentations </a></li>
+
+			<li class="icon">
+	<a href="https://johnnewbery.com/" title="">
+		<i class="fa fa-fw fa-home"></i>
+	</a>
+</li>
+
+<li class="icon">
+	<a href="https://johnnewbery.com/index.xml" title="Subcribe">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://github.com/jnewbery" title="GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li class="icon">
+	<a href="https://www.linkedin.com/in/johnnewbery" title="LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://twitter.com/jfnewbery" title="Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+
+	<div class="content">
+	<article>
+		<header>
+			<h1 class="title">What Did Bitcoin Core Contributors Ever Do for Us?</h1>
+			<p class="meta">
+	July 21, 2017 &middot; 8 minute read
+
+	
+</p>
+
+		</header>
+
+		<section class="post-content">
+			<p><em>originally posted at <a href="https://medium.com/@jfnewbery/">https://medium.com/@jfnewbery/</a></em></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When you fire core, I presume you&#39;re also going to &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888506387030003712?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>This afternoon, I tweeted a response to the strange suggestion that we
+<strong>fire core</strong> I’ve ignored the fact that Bitcoin Core isn’t a person or an
+organization (in the traditional sense), and that everyone is perfectly free to
+run their own re-implementation of Bitcoin, but instead focused on a few of the
+things you’d need to do if you were serious about rejecting the work of the
+Bitcoin Core contributors.</p>
+
+<p>I’ve included a mix of enhancements that have been around for one or more
+releases, stuff that’s going in to 0.15 right now, and longer-term development
+or research work. People who don’t actively follow the
+<a href="https://github.com/bitcoin/bitcoin/">bitcoin core github repository</a> probably aren’t
+aware of the wide range of work that the contributors are doing. Hopefully this
+gives some insight into that world.</p>
+
+<p>Full disclosure: I contribute to Bitcoin Core.</p>
+
+<p>So here goes, what have Bitcoin Core developers ever done for us?</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; switch back from Pieter&#39;s libsecp256k1 to OpenSSL, so your transaction signing/validation is 5x slower and less secure &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888506710649950208?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><a href="https://github.com/bitcoin-core/secp256k1">libsecp256k1</a> is a heavily optimized library for doing elliptic curve math over
+Bitcoin’s secp256k1 curve. Elliptic curve math is used for creating signatures
+to spend transactions, and for validating signatures in transactions that you
+receive from the network. In addition to being several times faster than
+OpenSSL, libsecp256k1 has much better protection against timing,
+derandomization and side-channel attacks. Bottom line: transaction
+signing/validation is faster and more secure.</p>
+
+<p>libsecp256k1 was mostly written by Pieter Wuille, Andrew Poelstra, Peter
+Dettman and Greg Maxwell, and <a href="https://github.com/bitcoin/bitcoin/pull/6954">started being used</a> by Bitcoin Core in v0.12.
+Pieter, Andrew, Peter and Greg continue to maintain and make improvements to
+libsecp256k1.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; remove Suhas&#39;s pruning code, so you need to store tens of GBs of dead data if you want to run a full node &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888506811845922816?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Pruning allows a full node to discard old blockchain data, while still fully
+validating all the consensus rules. It means that users can run a Bitcoin Core
+node on diskspace-constrained hardware and enjoy the <strong>exact same</strong> security of
+running a full node. The blockchain is now over 125GB, but a pruning node can
+be fully synced to the network with just 2–3GB of disk storage.</p>
+
+<p><a href="https://github.com/bitcoin/bitcoin/pull/5863">Automatic pruning functionality</a> was added in Bitcoin Core V0.11. The code was
+mostly written by Suhas Daftuar, Alex Morcos, Adam Weiss and Brad Andrews.
+Pruning was further improved in V0.14 to <a href="https://github.com/bitcoin/bitcoin/pull/7871">allow pruning to be run manually by the user</a>.
+Principal contributors were Brad Andrews and Russ Yanofsky.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; revert Luke&#39;s multiwallet so you can only access a single wallet on your node &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888506895941615616?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Multiwallet is a long-requested and wanted feature that has finally been merged
+in v0.15 🎉. This allows users to have completely segregated wallets, for
+use-cases such as separating business and personal accounts or having wallets
+for different purposes running concurrently. We don’t yet have separate
+authentication for different users, but future versions may allow multiple
+users to safely access different wallets on the same Bitcoin node.</p>
+
+<p>Luke Dashjr contributed <a href="https://github.com/bitcoin/bitcoin/pull/8694">multiwallet</a> in V0.15. The
+<a href="https://github.com/bitcoin/bitcoin/pull/10849">RPC interface</a> was provided by Jonas Schnelli.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; undo Cory&#39;s net refactor so your transactions and blocks take longer to propagate across the network &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888506982570876928?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Having a fast, efficient networking layer is essential for quick
+block/transaction propagation and the overall health of the network. The faster
+that blocks are able to propagate through the network, the lower the stale
+block rate, and the more secure the network is.</p>
+
+<p>Cory Fields has been doing continued work to refactor the networking code for
+several releases, with a <a href="https://github.com/bitcoin/bitcoin/pull/9441">major and significant improvement</a>
+delivered in V0.14.  V0.15 and future releases will continue to see
+improvements in cleaning up and isolating the network code from the server
+code.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; throw out Greg&#39;s signature aggregation research so your blocks will contain fewer transactions and take 2-4x longer to validate &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507085071282176?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>One of the most exciting <a href="https://bitcoin.org/en/release/v0.13.1#segregated-witness-soft-fork">benefits of segregated witness</a> is
+that it gives us the ability to upgrade the scripting language. There are
+several exciting script upgrades under investigation, but the one that will
+probably get most attention in upcoming releases is Schnorr signature support.
+Schnorr signatures are an alternative signature scheme to the currently used
+ECDSA which allow multiple signatures to be added together or ‘aggregated’.
+This is a win for scalability (since if multiple signature are added together,
+the aggregated signatures takes up only as much space as one of input
+signatures), validation cost (since only one signature needs to be validated
+instead of many) and privacy (since an aggregated signature doesn’t reveal
+whether the input was a single signature or many signatures).</p>
+
+<p>Greg Maxwell, Pieter Wuille and Andrew Poesltra have been
+<a href="https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/">investigating Schnorr signature aggregation</a>, particularly working to
+make sure that the aggregation scheme is safe from the signature cancellation
+problem.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; get rid of Russ&#39;s process separation groundwork, so your signing code will be in the same memory space as your network code &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507180793581568?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Currently, Bitcoin Core exists as a single process, with shared memory access
+between the network code, consensus code, wallet code and user interface code.
+Ideally we’d like to separate the wallet into a separate process, so if the
+networking function was hacked or compromised, your wallet function and private
+keys would be safer.</p>
+
+<p>Russ Yanofsky has been <a href="https://github.com/bitcoin/bitcoin/pull/10102">doing the groundwork for process separation</a>
+during V0.15. Look out for further progress in this area in V0.16 and V0.17.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; erase Alex&#39;s fee estimation improvements so you pay too much for your transactions&hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507260196069380?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Every transaction submitted to the Bitcoin network attaches a user-chosen fee,
+which goes to the miner who confirms that transaction in a block. Set the fee
+too low and your transaction won’t get confirmed in a block. Set it too high
+and you’ve donated money to the miner unnecessarily. Between those two extremes
+is a continuum of where to set your fee — a high fee will probably get you
+confirmed in the next block, a slightly lower fee might see your transaction
+confirmed in the next 3 or 4 blocks, and even lower than that and your
+transaction could take a few hours to get confirmed. Choosing the correct fee
+for your transaction is a hard problem, requiring knowledge of the current
+state of the network and some smarts to predict what will happen depending on
+where you set the fee.</p>
+
+<p>Alex Morcos has <a href="https://gist.github.com/morcos/d3637f015bc4e607e1fd10d8351e9f41">spent a lot of time thinking about and analyzing fee strategies</a>
+and <a href="https://github.com/bitcoin/bitcoin/pull/10199">significantly improved the fee logic</a> in V0.15.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; back out Matt&#39;s multithreading and scheduling refactors, so your node is mostly limited to running a single process &hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507364265119747?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Bitcoin Core runs multiple threads so different tasks can be run in parallel on
+a multi-core computer. However, a lot of the functions grab a ‘global lock’
+before doing their work, and other threads need to wait for that global lock to
+be released before they can continue with their work. Result: Bitcoin Core is
+not as able to do as much work in parallel as we’d like. If we can reduce the
+places where that global lock is grabbed and held, then Bitcoin Core would be
+able to things like run wallet tasks, validate blocks and serve blocks and
+transactions to peers simultaneously .</p>
+
+<p>This is <strong>very</strong> delicate work and requires a deep understanding of Bitcoin Core’s
+multi-threading model. Get it wrong and you could easily cause crashes or
+memory corruption. Matt Corallo has done <a href="https://github.com/bitcoin/bitcoin/pull/9725">a lot</a> of
+<a href="https://github.com/bitcoin/bitcoin/pull/9605">the</a> <a href="https://github.com/bitcoin/bitcoin/pull/10178">plumbing</a> <a href="https://github.com/bitcoin/bitcoin/pull/10179">work</a> for this in
+V0.15. We should see some major payoff for that work in V0.16.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; delete Jonas&#39;s and Nicolas&#39;s hardware wallet integration work, so your private keys will always be in your hot wallet&hellip;</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507476173357064?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Several companies now offer hardware wallets, which allow you to keep your
+private keys and signing code on a dedicated security device. That’s a much,
+much more secure model than having your private keys on a network-connected
+computer, which could potentially get hacked. Sadly there’s no standardized
+interface for hardware wallets, so each vendor provides their own software
+wallet to use with their hardware wallet. It’d be great if Bitcoin Core could
+support hardware wallets so users could benefit from running fully
+hardware-separated signing code behind the most secure Bitcoin full node.</p>
+
+<p>HWW support is probably at least a couple of releases away, but Jonas Schnelli
+and Nicolas Dorier have already been doing some <a href="https://github.com/bitcoin/bitcoin/pull/9728">early</a> <a href="https://github.com/bitcoin/bitcoin/pull/9662">work</a> to
+make sure that Bitcoin Core is ready for HWW support. Hopefully we’ll see some
+more progress on this in V0.16 or V0.17.</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&hellip; and find someone who&#39;s prepared to do Wladimir&#39;s thankless and never-ending task of merging and preparing releases?</p>&mdash; John Newbery (@jfnewbery) <a href="https://twitter.com/jfnewbery/status/888507574273818624?ref_src=twsrc%5Etfw">July 21, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Of course, none of these code changes would be of any use at all if we didn’t
+have repository maintainers to do the work of signing and merging all the
+commits, making sure translations are ready, preparing release notes, and doing
+all the other things that turn a bunch of code changes into a software product
+that normal people can run. Wladimir van der Laan is lead maintainer and has
+been tirelessly doing that work for many releases. Everyone in the Bitcoin
+community owes him a huge debt of gratitude.</p>
+
+<p>I’ve tried to give shout-outs to the main contributors behind each of these
+features. Open-source software is a collaborative activity and there are far
+more who have contributed code, review, testing time, documentation and much
+more to these and other initiatives. If I’ve made any egregious omissions,
+please accept my apologies and message me on twitter so I can set the record
+straight!</p>
+
+
+			
+		</section>
+	</article>
+	</div>
+
+	<footer class="site-footer">
+	<p class="text">&copy; 2018 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+</footer>
+
+
+</body>
+</html>

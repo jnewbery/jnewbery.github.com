@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>What&#39;s New in Bitcoin Core V0.15 - Part 3&middot; John Newbery</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="John Newbery">
+	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
+	<meta name="keywords" content="Bitcoin">
+	<meta name="generator" content="Hugo 0.47.1" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://johnnewbery.com/favicon.ico" type="image/x-icon">
+
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+	<header class="site-header">
+	<div class="branding">
+		<a href="https://johnnewbery.com/">
+		<img class="avatar" src="https://johnnewbery.com/img/avatar.jpg" alt=""/>
+		</a>
+		<h1 class="site-title">
+			<a href="https://johnnewbery.com/">John Newbery</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			<li><a href="/about/"> About </a></li><li><a href="/post/"> Posts </a></li><li><a href="/presentation/"> Presentations </a></li>
+
+			<li class="icon">
+	<a href="https://johnnewbery.com/" title="">
+		<i class="fa fa-fw fa-home"></i>
+	</a>
+</li>
+
+<li class="icon">
+	<a href="https://johnnewbery.com/index.xml" title="Subcribe">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://github.com/jnewbery" title="GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li class="icon">
+	<a href="https://www.linkedin.com/in/johnnewbery" title="LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="icon">
+	<a href="https://twitter.com/jfnewbery" title="Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+
+	<div class="content">
+	<article>
+		<header>
+			<h1 class="title">What&#39;s New in Bitcoin Core V0.15 - Part 3</h1>
+			<p class="meta">
+	September 16, 2017 &middot; 3 minute read
+
+	
+</p>
+
+		</header>
+
+		<section class="post-content">
+			<p>Yesterday, I wrote about <a href="https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt2/">how fee estimation is better in
+v0.15</a>,
+but what happens if you send a transaction without enough fee to be included in
+a block? Somehow you need to encourage miners to include your transaction, or
+it’ll be stuck in limbo forever (or at least until it drops out of nodes’
+mempools). There are two ways to ‘unstick’ your transaction and get it into a
+block:</p>
+
+<ul>
+<li><em>Child Pays For Parent (CPFP)</em> — a new transaction which spends the outputs of
+the stuck transaction. This child transaction attaches enough fee to pay for
+itself <em>and</em> its parent transactions to be included in a block. Since v0.13, the
+Bitcoin Core mining code is intelligent enough to consider ‘packages’ of
+transactions when filling a block, and will look at the total fee-rate across
+the ancestors and descendant (this feature should rightly be called
+Descendants-Pay-For-Ancestors since the mining code considers chains of
+transactions up to 25 in length). That means that if you create a descendant
+transaction with a high fee, the miner will include both the ancestors and
+descendant transactions in the next block so that it can collect the large total
+fee for the transaction chain.</li>
+<li><em>Replace By Fee (RBF)</em> — a new transaction which essentially double-spends the
+stuck transaction. The signer of the original transaction creates a new
+replacement transaction that spends the same inputs but pays additional fee
+(usually by reducing the amount of bitcoin for the change output and leaving the
+extra bitcoin as fee for the miner). If the replacement transaction attaches
+enough fee, then miners will be incentivized to include it in a block.</li>
+</ul>
+
+<p><strong>Replace-by-fee in the GUI (PRs
+<a href="https://github.com/bitcoin/bitcoin/pull/9592">9592</a> and
+<a href="https://github.com/bitcoin/bitcoin/pull/9697">9697</a>)</strong></p>
+
+<p><img align="middle" src="./hands_cash.jpeg" alt="hands_cash"></p>
+
+<p>Since v0.12, Bitcoin Core has supported ‘opt-in RBF’. This is where a
+transaction signals that it is replaceable and other nodes will allow RBF
+transactions to replace the original if enough additional fee is attached. Since
+v0.14, Bitcoin Core has also included a <code>bumpfee</code> command which will create a
+replacement transaction for an unconfirmed transaction. v0.15 brings this
+functionality into the GUI. New transactions can be marked as ‘opt-in RPF’ and
+stuck transactions can be bumped.</p>
+
+<p>This is great news for end-users who interact with Bitcoin Core through the GUI
+rather than through the Command Line. For the first time they’ll be able to mark
+transactions as replaceable and then create RBF transactions if they get stuck.
+The end result should be users not over-paying transaction fees. That’s good for
+the individual user and also for the fee market overall — if all users are able
+to pitch their fee rate more accurately, the block space will be allocated more
+efficiently to those who value it.</p>
+
+
+			
+		</section>
+	</article>
+	</div>
+
+	<footer class="site-footer">
+	<p class="text">&copy; 2018 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+</footer>
+
+
+</body>
+</html>
