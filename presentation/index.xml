@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Bitcoin Edge Dev&#43;&#43; - Tokyo</title>
+      <link>https://johnnewbery.com/presentation/2018/10/04/dev-plus-plus-tokyo/</link>
+      <pubDate>Thu, 04 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://johnnewbery.com/presentation/2018/10/04/dev-plus-plus-tokyo/</guid>
+      <description>I gave two educational talks at the second iteration of Bitcoin Edge Dev++ at Keio university in Tokyo, immediately preceeding the Scaling Bitcoin Conference.
+I covered the following topics:
+Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDSA  slides transcript video  Erratum:
+ The slide on Cyclic Groups said &amp;ldquo;The integers modulo p for any number p is a cyclic group&amp;rdquo;. It should say &amp;ldquo;The integers modulo p for any prime p is a cyclic group&amp;rdquo;.</description>
+    </item>
+    
+    <item>
       <title>London Bitcoin Devs - Bitcoin Core v0.17</title>
       <link>https://johnnewbery.com/presentation/2018/08/16/london-bitcoin-devs-bitcoin-core-0.17/</link>
       <pubDate>Thu, 16 Aug 2018 00:00:00 -0400</pubDate>
