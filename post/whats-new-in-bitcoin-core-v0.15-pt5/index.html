@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.61.0" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -127,23 +127,17 @@
 		</header>
 
 		<section class="post-content">
-			<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
-
+			<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
 <p>This is the final article in <a href="https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt1/">this
 series</a>
 about features and improvements in Bitcoin Core v0.15. Today I’ll talk about a
 small implementation change by Matt Corallo that gives a huge boost in
 performance for nodes that are in sync and keeping up with the blockchain.</p>
-
-<p><img align="middle" src="./fast.jpeg" alt="fast" width=50%>
-<em>Block validation: now up to 50% faster!</em></p>
-
+<!-- raw HTML omitted -->
 <p><strong>Script Caching (<a href="https://github.com/bitcoin/bitcoin/pull/10192">PR 10192</a>)</strong></p>
-
 <p>This is another great performance improvement, this time in new block validation
 time when the node is up to date with to the chain tip. Under normal
 circumstances, blocks will now validate around 40–50% faster.</p>
-
 <p>How can we achieve such a dramatic speed-up? It starts from the observation that
 once your node has been up and running for some time, every time it receives a
 block it will already have seen the majority of transactions within that block.
@@ -151,7 +145,6 @@ That’s because the miner who created the block is collecting the transactions
 for the block from the same P2P network that your node is connected to, and so
 your node already will have seen the transactions as they were being propagated
 across that network.</p>
-
 <p>In early versions of Bitcoin Core, almost every transaction would therefore be
 validated twice — first when it was received as an unconfirmed transaction and
 accepted into your mempool, and again when it was received in a block. Doing the
@@ -165,17 +158,14 @@ validated and was accepted into the mempool, it would cache the result of the
 signature validations. Then, if it received a block containing that same
 transaction, instead of validating the signatures again, it would just look up
 the result in its cache.</p>
-
 <p>This small change results in a huge performance improvement in block validation
 times.</p>
-
 <p>The obvious question is: why not cache the validity of the entire transaction?
 Wouldn’t that be an even bigger performance win? Unfortunately, that’s not
 possible since transaction validity is <em>context-specific</em>. That’s to say that a
 transaction can be valid in one block, but invalid in a different block. Here’s
 one way that a consensus failure could occur if we cached the transaction
 validity:</p>
-
 <ol>
 <li>The main chain tip is at height 1000</li>
 <li>Transaction A is received with nLockTime set to block 1001. It is evaluated as
@@ -183,12 +173,10 @@ valid since the next block will be height 1001.</li>
 <li>A miner re-orgs block 1000 out of the main chain by building block 1000’ on top
 of block 999. Block 1000’ includes transaction A.</li>
 </ol>
-
 <p>The result is a chain-split. Those nodes that first saw transaction A before the
 re-org consider block 1000’ to be valid since they already evaluated transaction
 A as valid. Those nodes that didn’t see transaction A before the re-org see
 block 1000’ as invalid since transaction A is invalid in any block before 1001.</p>
-
 <p>So we can’t simply cache the transaction validity without introducing the risk
 of a consensus failure, but we can (<em>and do</em>) cache the signature validity. Matt
 observed that we can do something between the two: we can cache the validity of
@@ -197,12 +185,10 @@ transaction. Crucially, within a Bitcoin transaction, validity of the scriptSigs
 is not contextual of any outside information. This is a really important point,
 and the recent CLTV (Check Locktime Verify) and CSV (Check Sequence Verify) BIPs
 were very carefully designed to preserve this property.</p>
-
 <p>Matt’s change adds a script cache in addition to the signature cache, so from
 v0.15, if we receive an unconfirmed transaction we’ll cache both the results
 from the ECDSA signature validations, and the results from the input script
 evaluations.</p>
-
 <p>Unlike Pieter’s per-output chainstate db change, this wasn’t a particularly
 large code change (+449 lines, -43 lines compared to +1109 lines, -1055 lines
 for Pieter’s change), but don’t underestimate the difficulty. People have
@@ -214,12 +200,9 @@ Matt’s contribution is that he has a deep understanding of the consensus code
 and more experience in writing and maintaining that code than almost anyone
 else. Very few people could have implemented something like this without
 introducing consensus bugs.</p>
-
 <p>The result of this change is that new block validation is roughly 40–50% faster
 on average. A huge improvement!</p>
-
 <p><strong>Conclusion</strong></p>
-
 <p>Bitcoin Core v0.15 final was released this week and is available for download
 from <a href="http://www.bitcoincore.org/">bitcoincore.org</a>. This release brings a few
 really nice new user features and some significant performance improvements, as
@@ -227,7 +210,6 @@ well as laying the groundwork for further improvements and features in v0.16.
 There’s a whole slew of smaller changes that I haven’t included here. Check <a href="https://bitcoincore.org/en/releases/0.15.0/">the
 release notes</a> if you want a
 complete listing.</p>
-
 <p><em>Thanks to Matt Corallo and Jimmy Song for feedback and input.</em></p>
 
 
@@ -237,7 +219,7 @@ complete listing.</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2019 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

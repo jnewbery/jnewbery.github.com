@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.61.0" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -134,7 +134,6 @@ a block? Somehow you need to encourage miners to include your transaction, or
 it’ll be stuck in limbo forever (or at least until it drops out of nodes’
 mempools). There are two ways to ‘unstick’ your transaction and get it into a
 block:</p>
-
 <ul>
 <li><em>Child Pays For Parent (CPFP)</em> — a new transaction which spends the outputs of
 the stuck transaction. This child transaction attaches enough fee to pay for
@@ -154,13 +153,10 @@ replacement transaction that spends the same inputs but pays additional fee
 extra bitcoin as fee for the miner). If the replacement transaction attaches
 enough fee, then miners will be incentivized to include it in a block.</li>
 </ul>
-
 <p><strong>Replace-by-fee in the GUI (PRs
 <a href="https://github.com/bitcoin/bitcoin/pull/9592">9592</a> and
 <a href="https://github.com/bitcoin/bitcoin/pull/9697">9697</a>)</strong></p>
-
-<p><img align="middle" src="./hands_cash.jpeg" alt="hands_cash"></p>
-
+<!-- raw HTML omitted -->
 <p>Since v0.12, Bitcoin Core has supported ‘opt-in RBF’. This is where a
 transaction signals that it is replaceable and other nodes will allow RBF
 transactions to replace the original if enough additional fee is attached. Since
@@ -168,7 +164,6 @@ v0.14, Bitcoin Core has also included a <code>bumpfee</code> command which will 
 replacement transaction for an unconfirmed transaction. v0.15 brings this
 functionality into the GUI. New transactions can be marked as ‘opt-in RPF’ and
 stuck transactions can be bumped.</p>
-
 <p>This is great news for end-users who interact with Bitcoin Core through the GUI
 rather than through the Command Line. For the first time they’ll be able to mark
 transactions as replaceable and then create RBF transactions if they get stuck.
@@ -184,7 +179,7 @@ efficiently to those who value it.</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2019 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

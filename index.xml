@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Newbery</title>
@@ -29,9 +29,9 @@ Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDS
       <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://johnnewbery.com/about/</guid>
-      <description> About me I spend most of my time writing code for Bitcoin Core or thinking about Bitcoin. I work at Chaincode Labs in New York, where I have a lot of freedom to work on projects that I think are important or interesting.
+      <description>About me I spend most of my time writing code for Bitcoin Core or thinking about Bitcoin. I work at Chaincode Labs in New York, where I have a lot of freedom to work on projects that I think are important or interesting.
 Some projects I work on are:
- Bitcoin Core Bitcoin Optech Chaincode&amp;rsquo;s Bitcoin and Lightning Applications residency programs  </description>
+ Bitcoin Core Bitcoin Optech Chaincode&#39;s Bitcoin and Lightning Applications residency programs  </description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ Slides and Jupyter notebook are available here.</description>
       <pubDate>Thu, 02 Nov 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/</guid>
-      <description> I gave a series of educational talks at the Bitcoin Edge Dev++ event at Stanford, immediately preceeding the Scaling Bitcoin Conference.
+      <description>I gave a series of educational talks at the Bitcoin Edge Dev++ event at Stanford, immediately preceeding the Scaling Bitcoin Conference.
 I covered the following topics:
 Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video  The mempool  slides video  HD Wallets  slides video  </description>
     </item>
@@ -73,7 +73,7 @@ Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video 
       <pubDate>Tue, 17 Oct 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/building-a-stronger-bitcoin-developer-community/</guid>
-      <description>originally posted at https://medium.com/@jfnewbery/
+      <description>_originally posted at https://medium.com/@jfnewbery/_
 In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d been slowly becoming more and more enchanted by this strange and wonderful technology, and I’d finally made the step of quitting my job of eight years with the intention of finding a way to make a living by working on Bitcoin. Matt Corallo’s announcement of the first Hacker Residency was very happy timing.</description>
     </item>
     
@@ -83,9 +83,8 @@ In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d
       <pubDate>Mon, 18 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt5/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 This is the final article in this series about features and improvements in Bitcoin Core v0.15. Today I’ll talk about a small implementation change by Matt Corallo that gives a huge boost in performance for nodes that are in sync and keeping up with the blockchain.
-Block validation: now up to 50% faster!
 Script Caching (PR 10192)
 This is another great performance improvement, this time in new block validation time when the node is up to date with to the chain tip.</description>
     </item>
@@ -96,7 +95,7 @@ This is another great performance improvement, this time in new block validation
       <pubDate>Sun, 17 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt4/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 In this series, I’ve already covered one performance improvement (per-output chainstate db) and a couple of user features (better fee estimation and bumpfee in the GUI). Today I’ll talk about another user feature, multi-wallet.
 Multi-wallet Support (PR 8694)
 Multi-wallet is a feature that’s long been requested by users, and has now been implemented in Bitcoin Core. Users are now able to load more than one wallet when starting the software.</description>
@@ -118,7 +117,7 @@ Multi-wallet is a feature that’s long been requested by users, and has now bee
       <pubDate>Fri, 15 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt2/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 This article continues the series on enhancements and new features in Bitcoin Core v0.15. Yesterday I talked about a low-level technical change that results in dramatic performance wins. Today, I’ll cover something much more visible to users — significantly improved fee estimation.
 Better Fee Estimation (PR 10199)
 I recently wrote about Bitcoin Core fee estimation in v0.14. It’s a huge subject and I was only able to scratch the surface.</description>
@@ -130,7 +129,7 @@ I recently wrote about Bitcoin Core fee estimation in v0.14. It’s a huge subje
       <pubDate>Thu, 14 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt1/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 I’m very excited about the recent Bitcoin Core v0.15 release. This is the first major release that I’ve been involved in from start to finish, and there are some great new features and improvements. Over the next few days, I’ll present a series of articles highlighting five of the most interesting changes to look out for.
 I’m going to dive quite deep into the technical details of these changes since I think they’re all interesting and instructive.</description>
     </item>
@@ -141,7 +140,7 @@ I’m going to dive quite deep into the technical details of these changes since
       <pubDate>Tue, 12 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/an-intro-to-bitcoin-core-fee-estimation/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 Why we have fees Space in the Bitcoin blockchain is a limited resource, and given a low enough price, demand for that space will far exceed the supply. If block space is free, people will find all kinds of uses for it — decentralised gambling, uploading an entire copy of the Bitcoin whitepaper, and timestamping individual documents are just a few examples we’ve seen in the past.</description>
     </item>
     
@@ -151,7 +150,7 @@ Why we have fees Space in the Bitcoin blockchain is a limited resource, and give
       <pubDate>Fri, 11 Aug 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/contributing-to-bitcoin-core-a-personal-account/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
+      <description>_originally posted at https://bitcointechtalk.com/_
 In January of this year, I moved to New York to take a job contributing full time to open source Bitcoin projects. These are some of my experiences in those first few months.
 First of all, I recognize that I’m incredibly fortunate. Not only do I have tremendous freedom to work on what I think is important or interesting, I get to sit alongside and work directly with brilliantly talented and motivated people.</description>
     </item>
@@ -162,7 +161,7 @@ First of all, I recognize that I’m incredibly fortunate. Not only do I have tr
       <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</guid>
-      <description>I gave a talk at Digital Garage&amp;rsquo;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&amp;rsquo;t filmed, but it formed the basis for a later blog post.</description>
+      <description>I gave a talk at Digital Garage&#39;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&#39;t filmed, but it formed the basis for a later blog post.</description>
     </item>
     
     <item>
@@ -171,10 +170,26 @@ First of all, I recognize that I’m incredibly fortunate. Not only do I have tr
       <pubDate>Fri, 21 Jul 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/what-did-bitcoin-core-contributors-ever-do-for-us/</guid>
-      <description>originally posted at https://medium.com/@jfnewbery/
-When you fire core, I presume you&amp;#39;re also going to &amp;hellip;
-&amp;mdash; John Newbery (@jfnewbery) July 21, 2017 
+      <description>_originally posted at https://medium.com/@jfnewbery/_
 This afternoon, I tweeted a response to the strange suggestion that we fire core I’ve ignored the fact that Bitcoin Core isn’t a person or an organization (in the traditional sense), and that everyone is perfectly free to run their own re-implementation of Bitcoin, but instead focused on a few of the things you’d need to do if you were serious about rejecting the work of the Bitcoin Core contributors.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://johnnewbery.com/labitconf2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnewbery.com/labitconf2019/</guid>
+      <description>  Labitconf schnorr/taproot presentation 2019   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://johnnewbery.com/post/labitconf2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnewbery.com/post/labitconf2019/</guid>
+      <description>  Labitconf schnorr/taproot presentation 2019   </description>
     </item>
     
     <item>

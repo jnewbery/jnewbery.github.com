@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations on John Newbery</title>
@@ -51,7 +51,7 @@ Slides and Jupyter notebook are available here.</description>
       <pubDate>Thu, 02 Nov 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/</guid>
-      <description> I gave a series of educational talks at the Bitcoin Edge Dev++ event at Stanford, immediately preceeding the Scaling Bitcoin Conference.
+      <description>I gave a series of educational talks at the Bitcoin Edge Dev++ event at Stanford, immediately preceeding the Scaling Bitcoin Conference.
 I covered the following topics:
 Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video  The mempool  slides video  HD Wallets  slides video  </description>
     </item>
@@ -62,7 +62,7 @@ Blocks and the Blockchain  slides video  The Peer-to-peer network  slides video 
       <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/presentation/2017/07/31/bc2-tokyo/</guid>
-      <description>I gave a talk at Digital Garage&amp;rsquo;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&amp;rsquo;t filmed, but it formed the basis for a later blog post.</description>
+      <description>I gave a talk at Digital Garage&#39;s BC2 workshop on the topic of &amp;ldquo;Contributing to Bitcoin Core&amp;rdquo;. The slides are here. The talk wasn&#39;t filmed, but it formed the basis for a later blog post.</description>
     </item>
     
   </channel>
