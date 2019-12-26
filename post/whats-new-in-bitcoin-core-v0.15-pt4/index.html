@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.61.0" />
+	<meta name="generator" content="Hugo 0.57.2" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -127,7 +127,8 @@
 		</header>
 
 		<section class="post-content">
-			<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
+			<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
+
 <p>In this series, I’ve already covered one performance improvement (<a href="https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt1/">per-output
 chainstate
 db</a>)
@@ -136,14 +137,19 @@ estimation</a>
 and <a href="https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt3/">bumpfee in the
 GUI</a>).
 Today I’ll talk about another user feature, multi-wallet.</p>
+
 <p><strong>Multi-wallet Support (<a href="https://github.com/bitcoin/bitcoin/pull/8694">PR
 8694</a>)</strong></p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*6i3Y8JSO-aRsq2Dn." alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*6i3Y8JSO-aRsq2Dn." alt="" /></p>
+
 <p>Multi-wallet is a feature that’s long been requested by users, and has now been
 implemented in Bitcoin Core. Users are now able to load more than one wallet
 when starting the software. Each wallet is completely separated from all others,
 with its own keys, addresses, balance and transaction outputs.</p>
+
 <p>There are many possible use-cases for multi-wallet, such as:</p>
+
 <ul>
 <li>Having separate ‘personal’ and ‘business’ wallets, with accounting for those
 wallets completely separated.</li>
@@ -156,6 +162,7 @@ authentication for individual wallets</strong>, so the users must trust each oth
 Future versions may introduce authentication for separate user access to
 individual wallets.</li>
 </ul>
+
 <p>When using multi-wallet, each wallet is available through the bitcoin-cli
 command line tool and the JSON RPC interface. In v0.15 the GUI will only display
 and allow transactions to be created and signed on the first wallet. However,
@@ -165,6 +172,7 @@ This usage pattern, called ‘wallet warming’, is useful if you want your home
 node to keep track of the wallet’s transactions and balances, but transact with
 that wallet on different software (eg a separate instance of Bitcoin Core).
 Future versions should allow all wallets to be controlled through the GUI.</p>
+
 <p>I’m excited about multi-wallet in v0.15, and I think that changes in v0.16 and
 beyond will build even more functionality on top. As an example, v0.16 should
 allow wallets to be dynamically loaded and unloaded during runtime, so it will
@@ -179,7 +187,7 @@ document in a word processor.</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

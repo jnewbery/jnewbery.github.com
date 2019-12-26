@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.61.0" />
+	<meta name="generator" content="Hugo 0.57.2" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -127,24 +127,30 @@
 		</header>
 
 		<section class="post-content">
-			<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
+			<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
+
 <p>This article continues <a href="https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt1/">the
 series</a>
 on enhancements and new features in Bitcoin Core v0.15. Yesterday I talked about
 a low-level technical change that results in dramatic performance wins. Today,
 I’ll cover something much more visible to users — significantly improved fee
 estimation.</p>
+
 <p><strong>Better Fee Estimation (<a href="https://github.com/bitcoin/bitcoin/pull/10199">PR
 10199</a>)</strong></p>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./ledger.jpeg" alt="ledger"></p>
+
 <p>I recently <a href="https://johnnewbery.com/post/an-intro-to-bitcoin-core-fee-estimation/">wrote about Bitcoin Core fee estimation in
 v0.14</a>.
 It’s a huge subject and I was only able to scratch the surface. I recommend you
 take a look at that article first to familiarise yourself with the concepts and
 terminology used in Bitcoin Core’s fee estimation.</p>
+
 <p>Bitcoin Core v0.15 takes the same framework and makes some substantial
 improvements that makes fee estimation a lot more accurate and reactive to
 changes in prevailing fee rates. Here’s a high-level summary of the changes:</p>
+
 <ul>
 <li>The algorithm is smarter about making sure enough data has been gathered in
 order to return a valid estimate. This means that fee estimation is less
@@ -171,8 +177,10 @@ since the fee can be ‘bumped’ if the fee conditions change rapidly (See <a h
 <li>A new <strong>estimaterawfee</strong> RPC has been added so that advanced users can implement
 their own fee estimates using the raw data collected by Bitcoin Core.</li>
 </ul>
+
 <p>There are a number of changes under the covers that allow these improvements to
 be exposed to the user:</p>
+
 <ul>
 <li>The whole algorithm is repeated three times over different time horizons: Short
 history (for targets up to 12 blocks), Medium history (for targets up to 48
@@ -197,17 +205,21 @@ accurate fee estimates.</li>
 Conservative estimates require a 95% success threshold for double the target to
 be met at longer time horizons.</li>
 </ul>
+
 <p>As explained in my previous article, the Bitcoin Core fee estimation algorithm
 simply records and reports meaningful statistics about past events in order to
 give the user a reasonable estimate of how much fee they need to attach. It
 doesn’t attempt to be forward-looking and by design does not try to be too
 smart.</p>
+
 <p>The changes in v0.15 continue this philosophy. The v0.15 algorithm isn’t trying
 to be too clever, but simply extends the existing algorithm to improve
 performance under a range of circumstances.</p>
+
 <p>For full details of the algorithmic changes, see <a href="https://gist.github.com/morcos/d3637f015bc4e607e1fd10d8351e9f41#proposed-changes-for-015">Alex Morcos’s
 gist</a>
 and the <a href="https://github.com/bitcoin/bitcoin/pull/10199">Pull Request</a>.</p>
+
 <p><em>Thanks to Matt Corallo, Alex Morcos and Jimmy Song for input and feedback.</em></p>
 
 
@@ -217,7 +229,7 @@ and the <a href="https://github.com/bitcoin/bitcoin/pull/10199">Pull Request</a>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

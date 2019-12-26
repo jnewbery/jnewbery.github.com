@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.61.0" />
+	<meta name="generator" content="Hugo 0.57.2" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -127,10 +127,14 @@
 		</header>
 
 		<section class="post-content">
-			<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
+			
+
+<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
+
 <p>In January of this year, I moved to New York to take a job contributing full
 time to open source Bitcoin projects. These are some of my experiences in those
 first few months.</p>
+
 <p>First of all, I recognize that I’m incredibly fortunate. Not only do I have
 tremendous freedom to work on what I think is important or interesting, I get
 to sit alongside and work directly with brilliantly talented and motivated
@@ -138,9 +142,13 @@ people. All the work I do is open source, and I’m contributing to a fascinatin
 technology which will be hugely important over the coming years. There’s almost
 nothing more I could ask for, and I often need to remind myself that this is
 real, and that somehow this is my living.</p>
+
 <p>But in more practical terms, what have I actually learned since I’ve been here?</p>
+
 <h4 id="start-small">Start small</h4>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./acorn.jpeg" alt="acorn" width=50%></p>
+
 <p>I’m the first to admit that I’m not the best or most experienced programmer. I
 started my professional career as a software developer but very quickly moved
 into a support role, managing customer projects and support teams. I made that
@@ -148,6 +156,7 @@ choice because that was what would let me meet interesting people and travel to
 exotic places. That seemed much more intriguing than working on code, and as a
 result I’ve spent the last few years working with customers and teams, rather
 than writing and debugging code.</p>
+
 <p>Bitcoin is a very complex project, one which runs on multiple platforms in
 multiple environments, and which at its heart is a consensus engine — where
 each participant must walk forward in lockstep, or else the whole system will
@@ -157,6 +166,7 @@ parts of the code need to be made extremely carefully, and there are really
 only a few people in the world who understand the system well enough to be able
 to safely work in those areas. Other people have tried to make changes to
 consensus, and more often than not they’ve failed spectacularly.</p>
+
 <p>So as a noob, what to do? Well, although I’m no C++ wizard, I can hold my own
 in Python, which is what the bitcoin functional test framework is written in. I
 was able to clean up some of that code, fix bugs in the tests, and uncover and
@@ -164,36 +174,45 @@ fix bugs in the product code. Through working on the tests, I was slowly able
 to get exposure to other parts of the codebase — the RPC server and client, the
 wallet, the build system, and so on, which I’m now able to make modest
 contributions to.</p>
+
 <p>Here’s my first merged code commit to Bitcoin Core:
-<a href="https://github.com/bitcoin/bitcoin/pull/8829,">https://github.com/bitcoin/bitcoin/pull/8829,</a> adding extra testing for the
+<a href="https://github.com/bitcoin/bitcoin/pull/8829">https://github.com/bitcoin/bitcoin/pull/8829</a>, adding extra testing for the
 bitcoin-tx utility. A modest contribution, but we all need to start somewhere!</p>
+
 <h4 id="hold-yourself-accountable">Hold yourself accountable</h4>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./clock.jpeg" alt="clock" width=50%></p>
+
 <p>As my experience of the code base has increased, so too has the surface over
 which I can work. Every day, the list of things that I think I could or should
 work on, and the number of projects I think would be a worthwhile use of my
 time, increases rather than decreases. With such freedom, it’s very easy to
 spread oneself too thin, or to constantly pick up and then drop projects. I’ve
 done this myself and found it to be ultimately unsatisfying.</p>
+
 <p>Furthermore, an open-source project isn’t like a normal job. There aren’t
 management lines holding you to account and enforcing deadlines from the top
 down. Any contribution you make is down to you, and if you start something and
 then drop it later, there’s really nothing anyone else can do about it.
 Everything you contribute is voluntary.</p>
+
 <p>I’ve found it useful to pick a more challenging longer-term project and commit
 to seeing it through. In the first few months, for me that project was
 refactoring the functional test framework into using a TestNode class
-(<a href="https://github.com/bitcoin/bitcoin/pull/10082),">https://github.com/bitcoin/bitcoin/pull/10082),</a> which I very much hope will be
+(<a href="https://github.com/bitcoin/bitcoin/pull/10082">https://github.com/bitcoin/bitcoin/pull/10082</a>), which I very much hope will be
 finished in the next couple of weeks. It’s been a long and at times frustrating
 journey to get this far, but I think ultimately the test framework will be in a
 much better shape when I’m finished. My next goal is to push forward
 wallet-server separation (starting here:
-<a href="https://github.com/bitcoin/bitcoin/pull/10762),">https://github.com/bitcoin/bitcoin/pull/10762),</a> and lay the groundwork for full
+<a href="https://github.com/bitcoin/bitcoin/pull/10762)">https://github.com/bitcoin/bitcoin/pull/10762)</a>, and lay the groundwork for full
 hardware wallet integration in v0.16 or v0.17. Having a goal, sharing it with
 other people, and holding yourself accountable to it is a really useful
 exercise.</p>
+
 <h4 id="sharpen-the-tools">Sharpen the tools</h4>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./tools.jpeg" alt="tools" width=50%></p>
+
 <p>Always, always, always be sharpening your tools and adding new skills and
 techniques. When I landed this gig in October last year, I knew that my basic
 skills weren’t up to scratch. So I read the pro git book cover to cover, and
@@ -201,17 +220,23 @@ the vim bible, and a tmux primer, and a linux overview. Currently I’m working
 through Understanding Cryptography. Next up is a book on Elliptic Curves, and
 then a treatment of the automake system. I’ll also re-read some C++ text books
 to remind myself of everything I’ve forgotten.</p>
+
 <p>(aside: if you haven’t read the Pro Git and Practical Vim books, go out and do
 that now. The time spent mastering git concepts like interactive rebase, rerere
 and filter-branch, and making your vim life more efficient will repay the
 invested time with interest)</p>
+
 <p>I’ve also instigated a whitepaper Wednesday at work. Each week one of us will
 read and present an interesting whitepaper or technical topic to the group.</p>
+
 <p>The pace of technical innovation in Bitcoin is breakneck, so to be a useful
 contributor and to be able to keep up with the latest developments we all need
 to be constantly refreshing our skills and learning new concepts.</p>
+
 <h4 id="offer-help-and-ask-for-help">Offer help and ask for help</h4>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./help.jpeg" alt="help" width=50%></p>
+
 <p>I’m not the best C++ programmer, but thanks to my time with Pro Git, I’m pretty
 handy with branches and commits. I’ve been able to help take load off
 long-standing contributors by rebasing and tidying up PRs (here:
@@ -223,6 +248,7 @@ up over basic concepts like squashing commits and rebasing PRs. Spending a bit
 of time helping those people is definitely a good use of time if it gets the PR
 unblocked, and even more so if it encourages the contributor to come back and
 contribute to the project again.</p>
+
 <p>Conversely, I’ve been very happily surprised by the amount of help
 long-standing bitcoin contributors have been prepared to give me and the time
 they’ve spent teaching me things. I’m always blown away by how much time sipa
@@ -234,13 +260,17 @@ even when I’ve had the most basic questions. Matt Corallo, Suhas Daftuar and
 Alex Morcos deserve special mention for getting me started on my Bitcoin
 developer journey in September last year and bringing me up to speed on the
 code and how to be a useful contributor.</p>
+
 <p>Bitcoin has an unfair reputation for being an unwelcoming environment for new
 contributors. The one thing that all of the long-standing contributors share is
 that they care deeply about the project. If you genuinely want to help, and are
 respectful of their time, then most will be more than happy to share expertise
 with you.</p>
+
 <h4 id="be-a-contributor-not-a-developer">Be a contributor, not a developer</h4>
-<!-- raw HTML omitted -->
+
+<p><img align="middle" src="./castel.jpeg" alt="castel" width=50%></p>
+
 <p>One part of being a useful contributor to an open source project is writing
 good code, but there are many more: understanding what other people want from
 the project and working in the same direction as them rather than against them;
@@ -253,11 +283,15 @@ can’t get anyone to review it. This is especially important if you’re a
 newcomer and haven’t built up a reputation in the project — try to make it easy
 for people to review and ACK your PRs and you’re more likely to get a good
 response.</p>
+
 <h4 id="interested">Interested?</h4>
+
 <p>My list isn’t complete and is no way prescriptive. Open source is a broad
 church, and everyone contributes in their own way.</p>
+
 <p>If you want a more practical primer on how to get started on contributing to
 Bitcoin Core, Jimmy Song has written a <a href="https://bitcointechtalk.com/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8">superb introduction</a>.</p>
+
 <p>Please reach out to me if have any thoughts or suggestions of your own, or if
 you want help getting started. I’m always happy to help people get their first
 commit merged!</p>
@@ -269,7 +303,7 @@ commit merged!</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 
