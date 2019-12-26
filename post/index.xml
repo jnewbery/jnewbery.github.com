@@ -17,8 +17,7 @@
       <pubDate>Tue, 17 Oct 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/building-a-stronger-bitcoin-developer-community/</guid>
-      <description>originally posted at https://medium.com/@jfnewbery/
-In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d been slowly becoming more and more enchanted by this strange and wonderful technology, and I’d finally made the step of quitting my job of eight years with the intention of finding a way to make a living by working on Bitcoin. Matt Corallo’s announcement of the first Hacker Residency was very happy timing.</description>
+      <description>Announcing the second Chaincode Residency program.</description>
     </item>
     
     <item>
@@ -27,11 +26,7 @@ In Summer 2016, I’d been interested in Bitcoin for a little over a year. I’d
       <pubDate>Mon, 18 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt5/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-This is the final article in this series about features and improvements in Bitcoin Core v0.15. Today I’ll talk about a small implementation change by Matt Corallo that gives a huge boost in performance for nodes that are in sync and keeping up with the blockchain.
-Block validation: now up to 50% faster!
-Script Caching (PR 10192)
-This is another great performance improvement, this time in new block validation time when the node is up to date with to the chain tip.</description>
+      <description>What&amp;rsquo;s new in Bitcoin Core part 5 of 5: script caching.</description>
     </item>
     
     <item>
@@ -40,10 +35,7 @@ This is another great performance improvement, this time in new block validation
       <pubDate>Sun, 17 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt4/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-In this series, I’ve already covered one performance improvement (per-output chainstate db) and a couple of user features (better fee estimation and bumpfee in the GUI). Today I’ll talk about another user feature, multi-wallet.
-Multi-wallet Support (PR 8694)
-Multi-wallet is a feature that’s long been requested by users, and has now been implemented in Bitcoin Core. Users are now able to load more than one wallet when starting the software.</description>
+      <description>What&amp;rsquo;s new in Bitcoin Core part 4 of 5: multi-wallet support.</description>
     </item>
     
     <item>
@@ -52,8 +44,7 @@ Multi-wallet is a feature that’s long been requested by users, and has now bee
       <pubDate>Sat, 16 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt3/</guid>
-      <description>Yesterday, I wrote about how fee estimation is better in v0.15, but what happens if you send a transaction without enough fee to be included in a block? Somehow you need to encourage miners to include your transaction, or it’ll be stuck in limbo forever (or at least until it drops out of nodes’ mempools). There are two ways to ‘unstick’ your transaction and get it into a block:
- Child Pays For Parent (CPFP) — a new transaction which spends the outputs of the stuck transaction.</description>
+      <description>What&amp;rsquo;s new in Bitcoin Core part 3 of 5: replace-by-fee in the GUI.</description>
     </item>
     
     <item>
@@ -62,10 +53,7 @@ Multi-wallet is a feature that’s long been requested by users, and has now bee
       <pubDate>Fri, 15 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt2/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-This article continues the series on enhancements and new features in Bitcoin Core v0.15. Yesterday I talked about a low-level technical change that results in dramatic performance wins. Today, I’ll cover something much more visible to users — significantly improved fee estimation.
-Better Fee Estimation (PR 10199)
-I recently wrote about Bitcoin Core fee estimation in v0.14. It’s a huge subject and I was only able to scratch the surface.</description>
+      <description>What&amp;rsquo;s new in Bitcoin Core part 2 of 5: better fee estimation.</description>
     </item>
     
     <item>
@@ -74,9 +62,7 @@ I recently wrote about Bitcoin Core fee estimation in v0.14. It’s a huge subje
       <pubDate>Thu, 14 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/whats-new-in-bitcoin-core-v0.15-pt1/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-I’m very excited about the recent Bitcoin Core v0.15 release. This is the first major release that I’ve been involved in from start to finish, and there are some great new features and improvements. Over the next few days, I’ll present a series of articles highlighting five of the most interesting changes to look out for.
-I’m going to dive quite deep into the technical details of these changes since I think they’re all interesting and instructive.</description>
+      <description>What&amp;rsquo;s new in Bitcoin Core part 1 of 5: per-output chainstate database.</description>
     </item>
     
     <item>
@@ -85,8 +71,7 @@ I’m going to dive quite deep into the technical details of these changes since
       <pubDate>Tue, 12 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/an-intro-to-bitcoin-core-fee-estimation/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-Why we have fees Space in the Bitcoin blockchain is a limited resource, and given a low enough price, demand for that space will far exceed the supply. If block space is free, people will find all kinds of uses for it — decentralised gambling, uploading an entire copy of the Bitcoin whitepaper, and timestamping individual documents are just a few examples we’ve seen in the past.</description>
+      <description>How Bitcoin Core estimates fee rates based on historical mempool and block data.</description>
     </item>
     
     <item>
@@ -95,9 +80,7 @@ Why we have fees Space in the Bitcoin blockchain is a limited resource, and give
       <pubDate>Fri, 11 Aug 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/contributing-to-bitcoin-core-a-personal-account/</guid>
-      <description>originally posted at https://bitcointechtalk.com/
-In January of this year, I moved to New York to take a job contributing full time to open source Bitcoin projects. These are some of my experiences in those first few months.
-First of all, I recognize that I’m incredibly fortunate. Not only do I have tremendous freedom to work on what I think is important or interesting, I get to sit alongside and work directly with brilliantly talented and motivated people.</description>
+      <description>Lessons from my first six months of contributing to Bitcoin Core.</description>
     </item>
     
     <item>
@@ -106,10 +89,7 @@ First of all, I recognize that I’m incredibly fortunate. Not only do I have tr
       <pubDate>Fri, 21 Jul 2017 00:00:00 -0400</pubDate>
       
       <guid>https://johnnewbery.com/post/what-did-bitcoin-core-contributors-ever-do-for-us/</guid>
-      <description>originally posted at https://medium.com/@jfnewbery/
-When you fire core, I presume you&amp;#39;re also going to &amp;hellip;
-&amp;mdash; John Newbery (@jfnewbery) July 21, 2017 
-This afternoon, I tweeted a response to the strange suggestion that we fire core I’ve ignored the fact that Bitcoin Core isn’t a person or an organization (in the traditional sense), and that everyone is perfectly free to run their own re-implementation of Bitcoin, but instead focused on a few of the things you’d need to do if you were serious about rejecting the work of the Bitcoin Core contributors.</description>
+      <description>A short summary of work that Bitcoin Core developers have contributed to the project.</description>
     </item>
     
   </channel>

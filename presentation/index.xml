@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Presentations on John Newbery</title>
+    <title>Talks on John Newbery</title>
     <link>https://johnnewbery.com/presentation/</link>
-    <description>Recent content in Presentations on John Newbery</description>
+    <description>Recent content in Talks on John Newbery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
@@ -19,7 +19,7 @@
       <guid>https://johnnewbery.com/presentation/2018/10/04/dev-plus-plus-tokyo/</guid>
       <description>I gave two educational talks at the second iteration of Bitcoin Edge Dev++ at Keio university in Tokyo, immediately preceeding the Scaling Bitcoin Conference.
 I covered the following topics:
-Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDSA  slides transcript video  Erratum:
+Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDSA  slides transcript video  Corrections:
  The slide on Cyclic Groups said &amp;ldquo;The integers modulo p for any number p is a cyclic group&amp;rdquo;. It should say &amp;ldquo;The integers modulo p for any prime p is a cyclic group&amp;rdquo;.</description>
     </item>
     
