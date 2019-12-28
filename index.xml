@@ -6,59 +6,10 @@
     <description>Recent content on John Newbery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://johnnewbery.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Schnorr/Taproot - Labitconf 2019</title>
-      <link>https://johnnewbery.com/presentation/2019/12/13/labitconf/</link>
-      <pubDate>Fri, 13 Dec 2019 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2019/12/13/labitconf/</guid>
-      <description>I gave a talk at Labitconf 2019 about the Schnorr and Taproot soft fork proposals.</description>
-    </item>
-    
-    <item>
-      <title>Bitcoin Edge Dev&#43;&#43; - Tel Aviv</title>
-      <link>https://johnnewbery.com/presentation/2019/09/09/dev-plus-plus-tel-aviv/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2019/09/09/dev-plus-plus-tel-aviv/</guid>
-      <description>I gave a talk on wallet developement at the third iteration of Bitcoin Edge Dev++ at Tel Aviv university, immediately preceeding the Scaling Bitcoin Conference.
-I covered the following topics:
- slides transcript video  </description>
-    </item>
-    
-    <item>
-      <title>Bitcoin Optech Schnorr / Taproot Workshops</title>
-      <link>https://johnnewbery.com/presentation/2019/09/24/schnorr-taproot-workshop/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2019/09/24/schnorr-taproot-workshop/</guid>
-      <description>I helped organize the Bitcoin Optech Schnorr and Taproot Workshops with James Chiang, Elichai Turkel, Mike Schmidt, Adam Jonas and Steve Lee.</description>
-    </item>
-    
-    <item>
-      <title>What Bitcoin Did 134</title>
-      <link>https://johnnewbery.com/presentation/2019/08/09/what-bitcoin-did/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2019/08/09/what-bitcoin-did/</guid>
-      <description>I was on the What Bitcoin Did podcast, hosted by Pete McCormack.
-We talked about</description>
-    </item>
-    
-    <item>
-      <title>Chaincode Summer Residency 2019</title>
-      <link>https://johnnewbery.com/presentation/2019/06/12/chaincode-residency/</link>
-      <pubDate>Wed, 12 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2019/06/12/chaincode-residency/</guid>
-      <description>Chaincode Labs hosted our fourth residench program in June-August 2019. I gave several talks on:
-- -</description>
-    </item>
     
     <item>
       <title>Protocol Development Panel - Magical Crypto Conference 2019</title>
@@ -69,25 +20,6 @@ We talked about</description>
       <description>I was on a panel discussing Bitcoin Protocol Development with Eric Lombrozo, Matt Corallo and Luke Dashjr, hosted by Katherine Wu at the Magical Crypto Conference 2019.
 We talked about:
  How changes are made to the Bitcoin protocol How the schnorr/taproot softfork will improve privacy and fungibility in Bitcoin The Binance hack and the possibility of exchanges attempting deep reorgs Maximalism and other blockchain projects  </description>
-    </item>
-    
-    <item>
-      <title>Noded 0.29</title>
-      <link>https://johnnewbery.com/presentation/2018/10/13/noded-0.29/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2018/10/13/noded-0.29/</guid>
-      <description>I was on Noded Podcast episode 0.29, hosted by Pierre Rochard and Michael Goldstein.
-We talked about</description>
-    </item>
-    
-    <item>
-      <title>Lightning Applications Residency</title>
-      <link>https://johnnewbery.com/presentation/2018/10/22/lightning-residency/</link>
-      <pubDate>Mon, 22 Oct 2018 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2018/10/22/lightning-residency/</guid>
-      <description>In October 2018, James Beirne and I organized a week-long residency program for building Lightning applications.</description>
     </item>
     
     <item>
@@ -125,26 +57,6 @@ Transcript: http://diyhpl.us/wiki/transcripts/london-bitcoin-devs/jnewbery-bitco
     </item>
     
     <item>
-      <title>Noded 0.19</title>
-      <link>https://johnnewbery.com/presentation/2018/08/03/noded-0.19/</link>
-      <pubDate>Fri, 03 Aug 2018 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2018/08/03/noded-0.19/</guid>
-      <description>James O&amp;rsquo;Beirne and I were on Noded Podcast episode 0.19, hosted by Pierre Rochard and Michael Goldstein.
-We talked about</description>
-    </item>
-    
-    <item>
-      <title>Tales From The Crypt #36</title>
-      <link>https://johnnewbery.com/presentation/2018/07/31/tftc-36/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2018/07/31/tftc-36/</guid>
-      <description>I was on Tales From The Crypt episode 36, hosted by Marty Bent.
-We talked about</description>
-    </item>
-    
-    <item>
       <title>Optech Launch Announcement - Distributed 2018</title>
       <link>https://johnnewbery.com/presentation/2018/07/20/optech-announcement/</link>
       <pubDate>Fri, 20 Jul 2018 00:00:00 -0400</pubDate>
@@ -162,26 +74,6 @@ We talked about what led us to start Bitcoin Optech and what we hoped to achieve
       <guid>https://johnnewbery.com/presentation/2018/03/17/mit-bitcoin-expo/</guid>
       <description>I was on a panel at the 2017 MIT Bitcoin Expo with Cory Fields and Andrew Poelstra, hosted by Paul Wegzyn. The audio is very poor for the first fifteen minutes of the video, but improves after that.
 We talked about scalability, protocol development and the difference between onchain transactions and layer 2 solutions.</description>
-    </item>
-    
-    <item>
-      <title>Noded 0.6</title>
-      <link>https://johnnewbery.com/presentation/2017/12/23/noded-0.6/</link>
-      <pubDate>Sat, 23 Dec 2017 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2017/12/23/noded-0.6/</guid>
-      <description>I was on Noded Podcast episode 0.6, hosted by Pierre Rochard and Michael Goldstein.
-We talked about</description>
-    </item>
-    
-    <item>
-      <title>Tales From The Crypt #5</title>
-      <link>https://johnnewbery.com/presentation/2017/12/06/tftc-5/</link>
-      <pubDate>Wed, 06 Dec 2017 00:00:00 -0400</pubDate>
-      
-      <guid>https://johnnewbery.com/presentation/2017/12/06/tftc-5/</guid>
-      <description>I was on Tales From The Crypt episode 5, hosted by Marty Bent.
-We talked about</description>
     </item>
     
     <item>
