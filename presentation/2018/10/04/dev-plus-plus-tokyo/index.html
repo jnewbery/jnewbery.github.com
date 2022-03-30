@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.80.0" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -123,33 +123,23 @@
 		</header>
 
 		<section class="post-content">
-			
-
-<p>I gave two educational talks at the second iteration of
+			<p>I gave two educational talks at the second iteration of
 <a href="https://keio-devplusplus-2018.bitcoinedge.org/">Bitcoin Edge Dev++</a> at Keio university in Tokyo, immediately preceeding the
 <a href="https://scalingbitcoin.org/">Scaling Bitcoin Conference</a>.</p>
-
 <p>I covered the following topics:</p>
-
-<h4 id="digital-signatures-finite-fields-elliptic-curves-schnorr-signatures-and-ecdsa">Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDSA</h4>
-
+<h4 id="digital-signatures---finite-fields-elliptic-curves-schnorr-signatures-and-ecdsa">Digital signatures - finite fields, elliptic curves, Schnorr signatures and ECDSA</h4>
 <ul>
 <li><a href="./signatures.pdf">slides</a></li>
 <li><a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/digital-signatures/">transcript</a></li>
 <li><a href="https://www.youtube.com/watch?v=DcGm_4-ig1o">video</a></li>
 </ul>
-
 <p>Corrections:</p>
-
 <ul>
 <li>The slide on Cyclic Groups said &ldquo;The integers modulo p for any number p is a cyclic group&rdquo;. It should say &ldquo;The integers modulo p for any <em>prime</em> p is a cyclic group&rdquo;. (If p is composite, ie p = ab, then the order of a in G is b, so G is not cyclic).</li>
 <li>during the talk, I was asked <em>“how does the verifier know <code>K</code> in the non-interactive schnorr identification protocol?”</em> I said that <code>K</code> can be provided by the prover. That’s wrong. In fact, the verifier calculates <code>K</code> himself and then checks that <code>e</code> is the hash of <code>K</code>. The verification step is checking that <code>e</code> does in fact commit to <code>K</code>.</li>
 </ul>
-
 <p>The slides above are corrected.</p>
-
 <h4 id="bitcoin-script">Bitcoin script</h4>
-
 <ul>
 <li><a href="./script.pdf">slides</a></li>
 <li><a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/scripts-general-and-simple/">transcript</a></li>
@@ -163,7 +153,7 @@
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2022 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

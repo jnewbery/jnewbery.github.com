@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.80.0" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -129,28 +129,22 @@ release that I’ve been involved in from start to finish, and there are some
 great new features and improvements. Over the next few days, I’ll present a
 series of articles highlighting five of the most interesting changes to look out
 for.</p>
-
 <p>I’m going to dive quite deep into the technical details of these changes since I
 think they’re all interesting and instructive. If you’re not interested in those
 details and just want a high-level overview of what’s new, then <a href="https://bitcoincore.org/en/releases/0.15.0/">the release
 notes</a> are a better place to look.</p>
-
 <p>We’ll start by getting under the hood and look at an implementation change.
 Users shouldn’t see any changes in behaviour from this change, except for their
 Bitcoin Core client performing much better.</p>
-
 <p><strong>Per-output chainstate db (<a href="https://github.com/bitcoin/bitcoin/pull/10195">PR
 10195</a>)</strong></p>
-
-<p><img src="./chain.jpeg" class="center-img"></p>
-
+<!-- raw HTML omitted -->
 <p>Per-output chainstate db is a fantastic win in Initial Block Download time and
 general performance, as well as being a huge improvement in code simplicity. It
 also removes a potential DOS vector where an attacker could exhaust a node’s
 memory with carefully constructed transactions. Users shouldn’t see any
 functional difference, but it gives such a performance improvement that it’s
 worth looking at in more detail.</p>
-
 <p>First, a bit of blockchain theory and history. The blockchain is simply an
 ordered log of the transactions that have been accepted by the network up to
 certain time. Once the blocks have been validated, that blockchain data is no
@@ -162,7 +156,6 @@ valid. In Bitcoin Core, that UTXO set is stored in a database called the
 <em>chainstate</em> db. Ideally a node would store this entirely in memory for fast
 lookups, but the chainstate can be flushed to disk if the node doesn’t have
 enough RAM to store the entire set.</p>
-
 <p>The original Bitcoin software stored the entire block tree data, transactions
 and spends in a database called blkindex. Transactions would never get removed
 from that database, even when all of the outputs of those transactions had been
@@ -173,7 +166,6 @@ that the database would continue expanding and block validation and propagation
 would slow down more and more over time. If we’d kept using this model, all full
 nodes would be required to keep the full blockchain (roughly 130GB at the time
 of writing), and block validation would be <em>really</em> slow.</p>
-
 <p>The first major change to the model came in v0.8, which included
 <a href="https://github.com/bitcoin/bitcoin/pull/1677">ultraprune</a>. Ultraprune split up
 blkindex into a blocks database (for storing the historical blockchain), and a
@@ -186,11 +178,9 @@ block pruning possible, which <a href="https://github.com/bitcoin/bitcoin/pull/5
 v0.11</a>. The result of those
 changes together meant that today it’s possible to run a full validating node
 with only 4–5GB of disk space.</p>
-
 <p>That’s the historical context. So what’s changed in v0.15? The chainstate
 database has been changed to be structured <em>per-output</em> instead of
 <em>per-transaction</em>. In practice that means:</p>
-
 <ul>
 <li>It’s much faster to read and write individual outputs from the database, since
 we don’t need to read and write all of the containing transaction’s unspent
@@ -202,9 +192,7 @@ more efficiently and flush to disk less often.</li>
 <li>The code is much simpler, and we can make future improvements to flushing the
 chainstate database to disk.</li>
 </ul>
-
 <p>There’s one small drawback to this:</p>
-
 <ul>
 <li>The chainstate database becomes slightly larger. The reason the chainstate was
 initially implemented per-transaction was that it saved disk space. Instead of
@@ -214,22 +202,17 @@ once per output. This is partially mitigated by compression in the database
 layer which can avoid writing the same txid multiple times. In practice, the
 chainstate database will be about 15% larger with this change.</li>
 </ul>
-
 <p>So what’s the bottom line for users? There are some performance results in <a href="https://github.com/bitcoin/bitcoin/pull/10195">the
 Pull Request</a>:</p>
-
 <ul>
 <li>Initial Block Download (IBD) and reindex is 30–40% faster</li>
 <li>IBD and reindex use 10–20% less memory</li>
 <li>IBD flushes to disk far less frequently.</li>
 </ul>
-
 <p>30–40% speed-up in IBD is an enormous win. It means that when you start up a
 fresh node, you’ll catch up to the chain tip much more quickly.</p>
-
 <p><em>Thanks to Pieter Wuille, Matt Corallo and Jimmy Song for input and feedback.</em></p>
-
-<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
+<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
 
 
 			
@@ -238,7 +221,7 @@ fresh node, you’ll catch up to the chain tip much more quickly.</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2022 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 

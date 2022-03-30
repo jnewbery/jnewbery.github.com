@@ -7,7 +7,7 @@
 	<meta name="author" content="John Newbery">
 	<meta name="description" content="John Newbery&#39;s blog, mostly about Bitcoin">
 	<meta name="keywords" content="Bitcoin">
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.80.0" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://johnnewbery.com/css/main.css">
@@ -123,18 +123,13 @@
 		</header>
 
 		<section class="post-content">
-			
-
-<p><img align="middle" src="./abacus.jpeg" alt="abacus"></p>
-
+			<!-- raw HTML omitted -->
 <h3 id="why-we-have-fees">Why we have fees</h3>
-
 <p>Space in the Bitcoin blockchain is a limited resource, and
 given a low enough price, demand for that space will far exceed the supply. If
 block space is free, people will find all kinds of uses for it — decentralised
 gambling, uploading an entire copy of the Bitcoin whitepaper, and timestamping
 individual documents are just a few examples we’ve seen in the past.</p>
-
 <p>To make sure that the limited space in the blocks is allocated to those who
 value it most and who are prepared to pay the most for it, Bitcoin has a fee
 market. In effect, the mempool acts as a decentralized clearinghouse — users
@@ -143,12 +138,9 @@ fee attached), and miners will take transactions and place them in the next
 block based on the fee attached. The larger your fee, the more likely it is
 that your transaction outbids the competing transactions and that the miner
 selects your transaction for inclusion in the next block.</p>
-
 <h3 id="why-fee-estimation-is-a-hard-problem">Why fee estimation is a hard problem</h3>
-
 <p>How does a user know what an appropriate fee is? It turns out that’s a really
 difficult question to answer, for a few reasons:</p>
-
 <ul>
 <li><strong>Supply is unpredictable.</strong> Over long time horizons, supply is predictable.
 There’s approximately 2MB of space every 10 minutes (or to be more precise,
@@ -179,20 +171,16 @@ too high, then you’re wasting money every time you send a Bitcoin transaction.
 If it’s too low, then you won’t get your transaction confirmed as quickly as
 you’d like, and using the system becomes really frustrating.</li>
 </ul>
-
 <p>We can base our fee estimation on various data points. Let’s have a look at
 them in turn. Note that these fee estimation techniques will be used on a full
 validating node. We need our own mempool and full blockchain to be able to make
 estimates based on observed events on the network.</p>
-
 <h4 id="fee-estimation-based-on-current-mempool">Fee Estimation based on current mempool</h4>
-
 <p>A naive fee estimation algorithm would look at your mempool and set your
 transaction fee at a level that puts it in the highest-paying 2MB of
 transactions. You might expect that strategy to get your transaction confirmed
 in the next block. Unfortunately, it’s not quite as simple as that for a number
 of reasons:</p>
-
 <ul>
 <li>Very recent transactions may not make it into the next block. Miners are
 already working on the next block when you submit your transaction. Depending
@@ -220,9 +208,7 @@ seeing in theirs.  For those reasons, just a snapshot of the current mempool
 isn’t going to give us enough information to properly estimate the required
 fee.</li>
 </ul>
-
 <h4 id="fee-estimation-based-on-historic-blocks">Fee Estimation based on historic blocks</h4>
-
 <p>This appears to be a better way to estimate fees at first glance, since the
 blockchain is an immutable history of exactly which transactions were included.
 However, if we only looked at historic blocks, our fee estimation algorithm
@@ -230,37 +216,28 @@ would be trivially gameable by miners. A miner could stuff his block with
 private, high fee rate transactions.  Fee estimators that only looked at
 historic blocks would be fooled into increasing their estimates because it
 would appear that a large fee is required to be confirmed in a block.</p>
-
 <p>This is a very cheap attack for miners, since the cost to them is just the
 opportunity cost of excluding real, fee-paying transactions. If our fee
 estimator requires that transactions be seen in the mempool before they’re
 included in a block, then the cost increases dramatically and the attack
 becomes infeasible. The miner would have to broadcast his high fee rate
 transactions and risk having to pay those fees to another miner.</p>
-
 <h4 id="fee-estimation-based-on-mempool-history">Fee Estimation based on mempool history</h4>
-
 <p>Bitcoin Core therefore considers the historic data for transactions in the
 mempool <em>and</em> in recent blocks. If we have a large enough sample of past
 transactions, we can make a good model of what fee would have been required to
 be included within a certain target number of blocks.</p>
-
-<h3 id="how-bitcoin-core-estimates-fees-before-v0-15">How Bitcoin Core estimates fees (before v0.15)</h3>
-
+<h3 id="how-bitcoin-core-estimates-fees-before-v015">How Bitcoin Core estimates fees (before v0.15)</h3>
 <p><em>Note 1: fee estimation in Bitcoin Core is rather complex. This article can
 only give an overview of the concepts behind the fee estimation algorithm and
 makes a few simplifications.  For more details, see Alex Morcos’s <a href="https://gist.github.com/morcos/d3637f015bc4e607e1fd10d8351e9f41">high level description of the fee estimation algorithm</a>
- or for all the gory details take a look at <a href="https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees.h">the code itself</a>.</em></p>
-
+or for all the gory details take a look at <a href="https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees.h">the code itself</a>.</em></p>
 <p><em>Note 2: This article describes the fee estimation algorithm from Bitcoin Core
 v0.14. There are a number of changes in v0.15 which I’ll cover in a future
 article.</em></p>
-
 <h4 id="concepts-buckets-and-targets">Concepts: buckets and targets</h4>
-
 <p>We’ll start by defining a couple of concepts that are used by the algorithm:
 <em>buckets</em> and <em>targets</em>.</p>
-
 <p>Bitcoin transactions fee rates fall within an almost continuous range from 1
 satoshi per byte up to many hundreds of satoshis per byte, and even higher for
 some extreme outliers (See <a href="https://core.jochen-hoenicke.de/queue/#24h">Jochen Hoenicke’s visualisation</a> for an idea of what
@@ -269,7 +246,6 @@ every transaction would require a lot of computation and storage, so the first
 thing Bitcoin Core does is group those transaction fee rates into <em>buckets</em>,
 where each bucket corresponds to a range of fee rates. That’s a bit like how
 Jochen’s visualisation groups the transactions into different colored bands.</p>
-
 <p>Bitcoin Core wants to be able to make estimates over a very large range of fee
 rates, so the lowest bucket starts at 1s/B and extends to 1.1 s/B (10% higher).
 The next bucket is from 1.1 s/B to 1.21 s/B (10% higher than 1.1). The next
@@ -277,37 +253,28 @@ bucket is from 1.21 to 10% higher than that, and so on. These
 exponentially-spaced intervals are extended all the way up to 10,000 s/B. The
 last bucket is anything at 9,400s/B and above. At todays exchange rate ($4200),
 that’s approximately $88 for a median sized transaction (225 bytes).</p>
-
 <p>The second concept is the number of blocks between a transaction entering the
 mempool and being accepted in a block. We’ll call that the target (since we’ll
 use this when calculating how much fee we need to attach in order to be
 included within a target number of blocks). In v0.14, Bitcoin Core keeps track
 of targets from 1 block up to 25 blocks.</p>
-
 <h4 id="keeping-track">Keeping track</h4>
-
 <p>To estimate how much fee a transaction requires in order to be
 confirmed within a certain number of blocks, Bitcoin Core stores a historic
 record of the transactions it’s seen in the mempool and blocks. It keeps:</p>
-
 <p><strong>A</strong>. the number of transactions that entered the mempool in each fee rate bucket;
 and</p>
-
 <p><strong>B</strong>. for each bucket-target pair, the number of transactions that successfully
 made it into the blockchain within the target number of blocks.</p>
-
 <p>For any target-bucket pair, Bitcoin Core is then able to find the probability
 that a transaction with that fee rate would have been included within that
 target number of blocks by dividing <strong>B</strong> by <strong>A</strong>.</p>
-
 <h4 id="responding-to-changes-in-prevailing-fee-rate">Responding to changes in prevailing fee rate</h4>
-
 <p>The Bitcoin network is a dynamic system and prevailing fee rates change over
 time (if this wasn’t true, we wouldn’t need fee estimation at all!). We want
 our fee estimator to be reactive to changes in prevailing fee rate and to give
 more weight to recent events than older events, since they’re more likely to be
 indicative of future fee rates.</p>
-
 <p>For that reason, Bitcoin Core uses an <em><a href="https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average">exponentially weighted moving average</a></em>, or
 put more simply, we pay more attention to recent blocks than older blocks.
 Every time Bitcoin Core receives a block it multiplies its counters for old
@@ -317,32 +284,24 @@ fee estimation algorithm. A block from 2.4 days ago carries approximately half
 the weight of the most recent block. A block from 4.8 days ago carries about
 one quarter of the weight, a block from 7.2 days ago carries about one eighth
 the weight, and so on.</p>
-
 <p>Note that this moving average is independent from the 24 block target range
 mentioned earlier. We’re interested in up to 24 blocks for transaction
 inclusion, but we’ll use historical data going back over many blocks.</p>
-
 <h4 id="estimatesmartfee-a-usable-interface">estimateSmartFee(): a usable interface</h4>
-
 <p>To make a useful interface, we need to
 know what question the user is asking. Bitcoin users almost certainly aren’t
 asking:</p>
-
 <blockquote>
 <p>If I attach a fee rate in bucket X to my transaction, what’s the exact
 probability of it confirming in Y blocks?</p>
 </blockquote>
-
 <p>Instead, they need to know:</p>
-
 <blockquote>
 <p>I want my transaction confirmed within Y blocks. How much fee should I attach
 to make that likely to happen?</p>
 </blockquote>
-
 <p>Enter <strong>estimateSmartFee()</strong>, which is designed to do just that.
 <strong>estimateSmartFee()</strong> works as follows:</p>
-
 <ol>
 <li>The user provides a target number of blocks that they want the transaction to
 confirm within.</li>
@@ -361,13 +320,11 @@ being confirmed is less than 95%</li>
 at least 95% of being included) and return the median fee of all
 transactions in that bucket.</li>
 </ol>
-
 <p>When calculating the probabilities for each
 target-bucket, the algorithm is smart enough to make sure that there’s a large
 enough sample size of transactions. That means that if there’s a small number
 high-fee transactions which weren’t confirmed for some reason, the fee
 estimation algorithm won’t get thrown off.</p>
-
 <p>We use a high threshold of 95% because we want the fee estimator to be able to
 tell us that a transaction at a certain fee rate would almost certainly have
 been included within target blocks. The fee estimator does not have perfect
@@ -376,12 +333,9 @@ have been out-of-band payments to the miner to get a certain class of
 transactions confirmed quicker than other transactions with the same or lower
 fee rate), so we set the bar high but not at 100% to give us a high confidence
 in our estimate.</p>
-
 <p><strong>estimateSmartFee()</strong> is used by the <strong>estimatesmartfee</strong>, <strong>sendtoaddress</strong>
 and sendmany RPCs, and when sending a transaction in the GUI.</p>
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>Fee estimation is a difficult problem. A fee estimator is essentially trying to
 answer a question about the future based on an incomplete picture of the past.
 It’s not clear how well we can measure the success of different fee estimation
@@ -395,7 +349,6 @@ on). Bitcoin Core provides a fee estimation algorithm that is appropriate for a
 large number of users in a wide variety of fee market circumstances. Other
 wallets may have very different approaches to fee estimation which could be
 more successful for certain users in certain circumstances.</p>
-
 <p>Bitcoin Core’s fee estimation doesn’t try to be too smart. It simply records
 and reports meaningful statistics about past events, and uses that data to give
 the user a reasonable estimate of how much fee they need to attach in order to
@@ -404,20 +357,17 @@ forward-looking, and it’s easy to describe exactly why a given estimate has
 been produced based on past statistics. It can react to changes in the
 prevailing fee market and give reasonable estimates in a wide range of
 conditions.</p>
-
 <p>A more sophisticated algorithm may attempt to be more forward-looking. However,
 the more complex the algorithm, the more difficult it becomes to describe its
 operation and results, and the more difficult it is to argue that the algorithm
 is safe against manipulation.</p>
-
 <p>There are cases where the Bitcoin Core fee estimator does not perform well,
 notably when there are very rapid changes in the prevailing fee market. The fee
 estimations in Bitcoin Core v0.15 builds on the same framework as the v0.14
 algorithm, but has many improvements to make it more robust in the case of
 changing circumstances and outlier events. I’ll describe what those changes are
 in a future blog post.</p>
-
-<p><em>originally posted at <a href="https://bitcointechtalk.com/">https://bitcointechtalk.com/</a></em></p>
+<p>_originally posted at <a href="https://bitcointechtalk.com/_">https://bitcointechtalk.com/_</a></p>
 
 
 			
@@ -426,7 +376,7 @@ in a future blog post.</p>
 	</div>
 
 	<footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+	<p class="text">&copy; 2022 - Released under the MIT license<!-- raw HTML omitted -->Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
 </footer>
 
 
